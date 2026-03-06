@@ -8,48 +8,200 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
-    :root{--pink:#ff6b9d;--purple:#c77dff;--yellow:#ffd166;--bg:#fff9f0;--text:#3d2c8d;--light:#7c6fbf}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+    :root {
+      --pink: #ff6b9d;
+      --purple: #c77dff;
+      --yellow: #ffd166;
+      --bg: #fff9f0;
+      --text: #3d2c8d;
+      --light: #7c6fbf;
+      --card-bg: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    header{background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--yellow) 100%);text-align:center;padding:2.5rem 1rem 3.5rem;position:relative;overflow:hidden}
-    header::before{content:'';position:absolute;bottom:-2px;left:0;right:0;height:60px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
-    .header-emoji{font-size:4rem;display:block;margin-bottom:.5rem}
-    header h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#fff;text-shadow:3px 3px 0 rgba(0,0,0,.15);letter-spacing:-1px}
-    header p{font-size:1.1rem;color:rgba(255,255,255,.9);margin-top:.5rem;font-weight:600}
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 50%, var(--yellow) 100%);
+      text-align: center;
+      padding: 2.5rem 1rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .header-emoji { font-size: 4rem; display: block; margin-bottom: .5rem; }
+    header h1 { font-size: clamp(2rem,6vw,3.5rem); font-weight: 900; color: #fff; text-shadow: 3px 3px 0 rgba(0,0,0,.15); letter-spacing: -1px; }
+    header p { font-size: 1.05rem; color: rgba(255,255,255,.92); margin-top: .5rem; font-weight: 600; }
 
-    .lang-toggle{display:flex;justify-content:center;gap:.5rem;margin:2rem 1rem 1rem}
-    .lang-btn{padding:.5rem 1.5rem;border-radius:999px;border:3px solid var(--purple);background:#fff;color:var(--purple);font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all .2s}
-    .lang-btn.active,.lang-btn:hover{background:var(--purple);color:#fff}
+    /* ── Lang toggle ── */
+    .lang-bar { display: flex; justify-content: center; gap: .5rem; margin: 1.75rem 1rem .5rem; }
+    .lang-btn {
+      padding: .45rem 1.4rem; border-radius: 999px;
+      border: 3px solid var(--purple); background: #fff; color: var(--purple);
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem;
+      cursor: pointer; transition: all .2s;
+    }
+    .lang-btn.active, .lang-btn:hover { background: var(--purple); color: #fff; }
 
-    main{max-width:900px;margin:0 auto;padding:1rem 1rem 4rem}
+    /* ── Story count ── */
+    .story-count {
+      text-align: center; color: var(--light); font-size: .85rem;
+      font-weight: 700; margin-bottom: 1.5rem; letter-spacing: .5px;
+    }
 
-    .today-label{text-align:center;font-size:.85rem;font-weight:800;letter-spacing:2px;color:var(--pink);text-transform:uppercase;margin-bottom:.75rem}
-    .story-featured{background:#fff;border-radius:24px;box-shadow:0 8px 32px rgba(199,125,255,.15);overflow:hidden;margin-bottom:2.5rem;border:3px solid var(--yellow)}
-    .story-image{width:100%;max-height:400px;object-fit:cover;display:block}
-    .story-image-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#ffecd2,#fcb69f);display:flex;align-items:center;justify-content:center;font-size:5rem}
-    .story-body{padding:1.75rem 2rem 2rem}
-    .story-date{font-size:.8rem;color:var(--light);font-weight:700;margin-bottom:.5rem}
-    .story-title{font-size:clamp(1.4rem,4vw,2rem);font-weight:900;margin-bottom:1.25rem;line-height:1.2}
-    .story-text{font-size:1.1rem;line-height:1.8;color:#444;white-space:pre-line}
+    /* ── Main grid ── */
+    main { max-width: 960px; margin: 0 auto; padding: .5rem 1.25rem 5rem; }
 
-    .archive-title{font-size:1.3rem;font-weight:900;margin:2rem 0 1rem}
-    .archive-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
-    .archive-card{background:#fff;border-radius:16px;padding:1.25rem;box-shadow:0 4px 16px rgba(0,0,0,.07);cursor:pointer;border:2px solid transparent;transition:all .2s;text-align:left;width:100%}
-    .archive-card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 8px 24px rgba(199,125,255,.2)}
-    .card-date{font-size:.75rem;color:var(--light);font-weight:700;margin-bottom:.3rem}
-    .card-title{font-size:.95rem;font-weight:800}
-    .card-emoji{font-size:2rem;margin-bottom:.5rem;display:block}
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.1rem;
+    }
 
-    .modal-overlay{position:fixed;inset:0;background:rgba(61,44,141,.6);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .2s}
-    .modal-overlay.open{opacity:1;pointer-events:all}
-    .modal{background:#fff;border-radius:24px;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;padding:2rem;position:relative}
-    .modal-close{position:absolute;top:1rem;right:1rem;background:var(--bg);border:none;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    /* ── Story card ── */
+    .story-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.08);
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .story-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple);
+      box-shadow: 0 8px 28px rgba(199,125,255,.25);
+    }
 
-    .loading{text-align:center;padding:4rem 1rem;color:var(--light);font-weight:700;font-size:1.1rem}
-    footer{text-align:center;padding:2rem 1rem;color:var(--light);font-size:.85rem;font-weight:600}
+    /* B&W illustration area */
+    .card-image {
+      width: 100%; aspect-ratio: 1/1;
+      background: #f5f5f5;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      border-bottom: 2px solid #f0f0f0;
+      position: relative;
+    }
+    .card-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(100%) contrast(1.1);
+    }
+    .card-image .no-img {
+      font-size: 2.8rem;
+      color: #bbb;
+    }
+    /* NEW badge */
+    .badge-new {
+      position: absolute; top: 8px; right: 8px;
+      background: var(--pink); color: #fff;
+      font-size: .65rem; font-weight: 900;
+      padding: 2px 8px; border-radius: 999px;
+      letter-spacing: .5px; text-transform: uppercase;
+    }
 
-    @media(max-width:600px){.story-body{padding:1.25rem}.archive-grid{grid-template-columns:1fr 1fr}}
+    .card-body { padding: .85rem 1rem 1rem; flex: 1; }
+    .card-date { font-size: .7rem; color: var(--light); font-weight: 700; margin-bottom: .3rem; }
+    .card-title { font-size: .9rem; font-weight: 900; color: var(--text); line-height: 1.3; }
+
+    /* ── Loading / empty ── */
+    .msg { text-align: center; padding: 4rem 1rem; color: var(--light); font-weight: 700; font-size: 1.1rem; }
+
+    /* ── Modal overlay ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(30, 15, 80, .65);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* ── Modal box ── */
+    .modal {
+      background: #fff;
+      border-radius: 28px;
+      max-width: 600px; width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(61,44,141,.3);
+      animation: popIn .25s ease;
+    }
+    @keyframes popIn {
+      from { transform: scale(.93); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    /* Modal illustration */
+    .modal-image {
+      width: 100%; aspect-ratio: 1/1;
+      max-height: 280px;
+      overflow: hidden;
+      border-radius: 28px 28px 0 0;
+      background: #f5f5f5;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(100%) contrast(1.1);
+    }
+    .modal-image .no-img { font-size: 5rem; color: #ccc; }
+
+    .modal-body { padding: 1.75rem 2rem 2.25rem; }
+    .modal-date { font-size: .75rem; color: var(--light); font-weight: 700; margin-bottom: .4rem; }
+    .modal-title { font-size: 1.55rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem; }
+
+    /* Story text — Kicia Kocia style: each line on new row */
+    .modal-text {
+      font-size: 1.08rem;
+      line-height: 1.95;
+      color: #333;
+    }
+    .modal-text p { margin-bottom: .15rem; }
+    .modal-text p.dialogue {
+      padding-left: 1rem;
+      color: #2a2a5a;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      position: sticky; top: 1rem;
+      float: right;
+      margin: 1rem 1rem 0 0;
+      background: var(--bg); border: none; border-radius: 50%;
+      width: 38px; height: 38px; font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      z-index: 10;
+    }
+    .modal-close:hover { background: #ffe0f0; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 2rem 1rem;
+      color: var(--light); font-size: .82rem; font-weight: 600;
+    }
+    footer a { color: var(--purple); }
+
+    @media (max-width: 480px) {
+      .stories-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
+      .modal-body { padding: 1.25rem 1.25rem 1.75rem; }
+      .modal-title { font-size: 1.25rem; }
+      .modal-text { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -57,40 +209,48 @@
 <header>
   <span class="header-emoji">🤖</span>
   <h1>Julia Automatyzuje</h1>
-  <p>Codziennie nowa bajka dla małych i dużych • Daily story for kids</p>
+  <p>Codziennie nowa bajka dla małych i dużych &bull; A new story every day</p>
 </header>
 
-<div class="lang-toggle">
+<div class="lang-bar">
   <button class="lang-btn active" id="btn-pl" onclick="setLang('pl')">🇵🇱 Polski</button>
-  <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+  <button class="lang-btn"        id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
 </div>
 
 <main>
-  <div id="app"><div class="loading">Ładuję bajki…</div></div>
+  <p class="story-count" id="count"></p>
+  <div class="stories-grid" id="grid">
+    <div class="msg">Ładuję bajki…</div>
+  </div>
 </main>
 
 <footer>
-  Zrobione z 💜 · Nowa bajka każdego dnia o 8:00 ·
-  <a href="mailto:contact@justautomate.ai" style="color:var(--purple)">Kontakt</a>
+  Zrobione z 💜 &middot; Nowa bajka każdego dnia o 8:00 &middot;
+  <a href="mailto:contact@justautomate.ai">Kontakt</a>
 </footer>
 
-<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
+<!-- Modal -->
+<div class="modal-overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div id="modal-body"></div>
+    <div id="modal-image-wrap"></div>
+    <div class="modal-body">
+      <div class="modal-date" id="modal-date"></div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <div class="modal-text" id="modal-text"></div>
+    </div>
   </div>
 </div>
 
 <script>
-  const STORIES_URL = 'stories.json';
   const EMOJIS = ['🤖','⚙️','🦾','🌟','✨','🎯','🚀','💡','🔧','🎪','🌈','🦄'];
-  let allStories = [];
+  let stories = [];
   let lang = 'pl';
 
-  function emoji(seed) {
+  function emojiFor(seed) {
     let h = 0;
-    for (const c of seed) h = (h * 31 + c.charCodeAt(0)) & 0xffffffff;
-    return EMOJIS[Math.abs(h) % EMOJIS.length];
+    for (const c of (seed||'x')) h = (h * 31 + c.charCodeAt(0)) & 0x7fffffff;
+    return EMOJIS[h % EMOJIS.length];
   }
 
   function fmtDate(d) {
@@ -100,67 +260,112 @@
     );
   }
 
+  function isToday(d) {
+    return d === new Date().toISOString().split('T')[0];
+  }
+
   function setLang(l) {
     lang = l;
     document.getElementById('btn-pl').classList.toggle('active', l === 'pl');
     document.getElementById('btn-en').classList.toggle('active', l === 'en');
-    render();
+    renderGrid();
+    // If modal open — refresh it
+    if (document.getElementById('overlay').classList.contains('open')) {
+      const idx = document.getElementById('modal').dataset.idx;
+      if (idx !== undefined) openModal(+idx);
+    }
   }
 
-  function render() {
-    const app = document.getElementById('app');
-    if (!allStories.length) {
-      app.innerHTML = `<div class="loading">${lang === 'pl' ? 'Brak bajek — wróć jutro! 🌙' : 'No stories yet — come back tomorrow! 🌙'}</div>`;
+  /* ── Render story text with dialogue lines ── */
+  function renderStoryText(text) {
+    if (!text) return '';
+    return text.split('\n')
+      .map(line => {
+        const l = line.trim();
+        if (!l) return '';
+        const isDialogue = l.startsWith('–') || l.startsWith('-') || l.startsWith('—');
+        return `<p class="${isDialogue ? 'dialogue' : ''}">${l}</p>`;
+      })
+      .join('');
+  }
+
+  /* ── Render grid ── */
+  function renderGrid() {
+    const grid = document.getElementById('grid');
+    const count = document.getElementById('count');
+
+    if (!stories.length) {
+      grid.innerHTML = `<div class="msg" style="grid-column:1/-1">${lang==='pl'?'Brak bajek — wróć jutro! 🌙':'No stories yet — come back tomorrow! 🌙'}</div>`;
+      count.textContent = '';
       return;
     }
-    const [today, ...archive] = allStories;
-    const t = s => lang === 'pl' ? s.title_pl : s.title_en;
-    const txt = s => lang === 'pl' ? s.story_pl : s.story_en;
 
-    app.innerHTML = `
-      <p class="today-label">✨ ${lang === 'pl' ? 'Dzisiejsza bajka' : "Today's story"} ✨</p>
-      <div class="story-featured">
-        ${today.image_url
-          ? `<img class="story-image" src="${today.image_url}" alt="${t(today)}" loading="lazy"/>`
-          : `<div class="story-image-placeholder">${emoji(today.slug||today.date)}</div>`}
-        <div class="story-body">
-          <div class="story-date">${fmtDate(today.date)}</div>
-          <h2 class="story-title">${t(today)}</h2>
-          <p class="story-text">${txt(today)}</p>
-        </div>
-      </div>
-      ${archive.length ? `
-        <div class="archive-title">📚 ${lang === 'pl' ? 'Poprzednie bajki' : 'Previous stories'}</div>
-        <div class="archive-grid">
-          ${archive.map((s,i) => `
-            <button class="archive-card" onclick="openModal(${i+1})">
-              <span class="card-emoji">${emoji(s.slug||s.date)}</span>
-              <div class="card-date">${fmtDate(s.date)}</div>
-              <div class="card-title">${t(s)}</div>
-            </button>`).join('')}
-        </div>` : ''}`;
+    count.textContent = lang === 'pl'
+      ? `${stories.length} bajeczk${stories.length===1?'a':'i'} do przeczytania`
+      : `${stories.length} stor${stories.length===1?'y':'ies'} to read`;
+
+    grid.innerHTML = stories.map((s, i) => {
+      const title = lang==='pl' ? s.title_pl : s.title_en;
+      const today = isToday(s.date);
+      return `
+        <div class="story-card" onclick="openModal(${i})" role="button" tabindex="0"
+             onkeydown="if(event.key==='Enter')openModal(${i})">
+          <div class="card-image">
+            ${s.image_url
+              ? `<img src="${s.image_url}" alt="${title}" loading="lazy"/>`
+              : `<span class="no-img" aria-hidden="true">${emojiFor(s.slug)}</span>`}
+            ${today ? `<span class="badge-new">${lang==='pl'?'Nowa!':'New!'}</span>` : ''}
+          </div>
+          <div class="card-body">
+            <div class="card-date">${fmtDate(s.date)}</div>
+            <div class="card-title">${title}</div>
+          </div>
+        </div>`;
+    }).join('');
   }
 
+  /* ── Open modal ── */
   function openModal(idx) {
-    const s = allStories[idx];
+    const s = stories[idx];
     if (!s) return;
-    document.getElementById('modal-body').innerHTML = `
-      ${s.image_url ? `<img src="${s.image_url}" style="width:100%;border-radius:16px;margin-bottom:1rem"/>` : `<div style="font-size:4rem;text-align:center;margin-bottom:1rem">${emoji(s.slug||s.date)}</div>`}
-      <div style="font-size:.8rem;color:var(--light);font-weight:700;margin-bottom:.5rem">${fmtDate(s.date)}</div>
-      <h2 style="font-size:1.5rem;font-weight:900;margin-bottom:1rem">${lang === 'pl' ? s.title_pl : s.title_en}</h2>
-      <p style="line-height:1.8;white-space:pre-line">${lang === 'pl' ? s.story_pl : s.story_en}</p>`;
-    document.getElementById('modal').classList.add('open');
+    const title = lang==='pl' ? s.title_pl : s.title_en;
+    const text  = lang==='pl' ? s.story_pl  : s.story_en;
+
+    // Image
+    const imgWrap = document.getElementById('modal-image-wrap');
+    if (s.image_url) {
+      imgWrap.innerHTML = `<div class="modal-image"><img src="${s.image_url}" alt="${title}"/></div>`;
+    } else {
+      imgWrap.innerHTML = `<div class="modal-image"><span class="no-img">${emojiFor(s.slug)}</span></div>`;
+    }
+
+    document.getElementById('modal-date').textContent  = fmtDate(s.date);
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-text').innerHTML    = renderStoryText(text);
+    document.getElementById('modal').dataset.idx       = idx;
+
+    document.getElementById('overlay').classList.add('open');
+    document.getElementById('modal').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
   }
 
-  function closeModal() { document.getElementById('modal').classList.remove('open'); }
+  /* ── Close modal ── */
+  function closeModal() {
+    document.getElementById('overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-  // Załaduj stories.json
-  fetch(STORIES_URL + '?t=' + Date.now())
+  document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+
+  /* ── Load stories.json ── */
+  fetch('stories.json?t=' + Date.now())
     .then(r => r.json())
-    .then(data => { allStories = data; render(); })
+    .then(data => { stories = data; renderGrid(); })
     .catch(() => {
-      document.getElementById('app').innerHTML =
-        `<div class="loading">${lang === 'pl' ? 'Brak bajek — wróć jutro! 🌙' : 'No stories yet — come back tomorrow! 🌙'}</div>`;
+      document.getElementById('grid').innerHTML =
+        `<div class="msg" style="grid-column:1/-1">
+          ${lang==='pl'?'Brak bajek — wróć jutro! 🌙':'No stories yet — come back tomorrow! 🌙'}
+        </div>`;
     });
 </script>
 </body>
