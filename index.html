@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Julia Automatyzuje — Bajki dla dzieci</title>
+  <meta name="description" content="Codziennie nowa bajka o Julii, która automatyzuje świat!"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--pink:#ff6b9d;--purple:#c77dff;--yellow:#ffd166;--bg:#fff9f0;--text:#3d2c8d;--light:#7c6fbf}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+    header{background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--yellow) 100%);text-align:center;padding:2.5rem 1rem 3.5rem;position:relative;overflow:hidden}
+    header::before{content:'';position:absolute;bottom:-2px;left:0;right:0;height:60px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+    .header-emoji{font-size:4rem;display:block;margin-bottom:.5rem}
+    header h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#fff;text-shadow:3px 3px 0 rgba(0,0,0,.15);letter-spacing:-1px}
+    header p{font-size:1.1rem;color:rgba(255,255,255,.9);margin-top:.5rem;font-weight:600}
+
+    .lang-toggle{display:flex;justify-content:center;gap:.5rem;margin:2rem 1rem 1rem}
+    .lang-btn{padding:.5rem 1.5rem;border-radius:999px;border:3px solid var(--purple);background:#fff;color:var(--purple);font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all .2s}
+    .lang-btn.active,.lang-btn:hover{background:var(--purple);color:#fff}
+
+    main{max-width:900px;margin:0 auto;padding:1rem 1rem 4rem}
+
+    .today-label{text-align:center;font-size:.85rem;font-weight:800;letter-spacing:2px;color:var(--pink);text-transform:uppercase;margin-bottom:.75rem}
+    .story-featured{background:#fff;border-radius:24px;box-shadow:0 8px 32px rgba(199,125,255,.15);overflow:hidden;margin-bottom:2.5rem;border:3px solid var(--yellow)}
+    .story-image{width:100%;max-height:400px;object-fit:cover;display:block}
+    .story-image-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#ffecd2,#fcb69f);display:flex;align-items:center;justify-content:center;font-size:5rem}
+    .story-body{padding:1.75rem 2rem 2rem}
+    .story-date{font-size:.8rem;color:var(--light);font-weight:700;margin-bottom:.5rem}
+    .story-title{font-size:clamp(1.4rem,4vw,2rem);font-weight:900;margin-bottom:1.25rem;line-height:1.2}
+    .story-text{font-size:1.1rem;line-height:1.8;color:#444;white-space:pre-line}
+
+    .archive-title{font-size:1.3rem;font-weight:900;margin:2rem 0 1rem}
+    .archive-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+    .archive-card{background:#fff;border-radius:16px;padding:1.25rem;box-shadow:0 4px 16px rgba(0,0,0,.07);cursor:pointer;border:2px solid transparent;transition:all .2s;text-align:left;width:100%}
+    .archive-card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 8px 24px rgba(199,125,255,.2)}
+    .card-date{font-size:.75rem;color:var(--light);font-weight:700;margin-bottom:.3rem}
+    .card-title{font-size:.95rem;font-weight:800}
+    .card-emoji{font-size:2rem;margin-bottom:.5rem;display:block}
+
+    .modal-overlay{position:fixed;inset:0;background:rgba(61,44,141,.6);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .2s}
+    .modal-overlay.open{opacity:1;pointer-events:all}
+    .modal{background:#fff;border-radius:24px;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;padding:2rem;position:relative}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:var(--bg);border:none;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+    .loading{text-align:center;padding:4rem 1rem;color:var(--light);font-weight:700;font-size:1.1rem}
+    footer{text-align:center;padding:2rem 1rem;color:var(--light);font-size:.85rem;font-weight:600}
+
+    @media(max-width:600px){.story-body{padding:1.25rem}.archive-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-emoji">🤖</span>
+  <h1>Julia Automatyzuje</h1>
+  <p>Codziennie nowa bajka dla małych i dużych • Daily story for kids</p>
+</header>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-pl" onclick="setLang('pl')">🇵🇱 Polski</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+</div>
+
+<main>
+  <div id="app"><div class="loading">Ładuję bajki…</div></div>
+</main>
+
+<footer>
+  Zrobione z 💜 · Nowa bajka każdego dnia o 8:00 ·
+  <a href="mailto:contact@justautomate.ai" style="color:var(--purple)">Kontakt</a>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+  const STORIES_URL = 'stories.json';
+  const EMOJIS = ['🤖','⚙️','🦾','🌟','✨','🎯','🚀','💡','🔧','🎪','🌈','🦄'];
+  let allStories = [];
+  let lang = 'pl';
+
+  function emoji(seed) {
+    let h = 0;
+    for (const c of seed) h = (h * 31 + c.charCodeAt(0)) & 0xffffffff;
+    return EMOJIS[Math.abs(h) % EMOJIS.length];
+  }
+
+  function fmtDate(d) {
+    return new Date(d + 'T12:00:00').toLocaleDateString(
+      lang === 'pl' ? 'pl-PL' : 'en-GB',
+      { day: 'numeric', month: 'long', year: 'numeric' }
+    );
+  }
+
+  function setLang(l) {
+    lang = l;
+    document.getElementById('btn-pl').classList.toggle('active', l === 'pl');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    render();
+  }
+
+  function render() {
+    const app = document.getElementById('app');
+    if (!allStories.length) {
+      app.innerHTML = `<div class="loading">${lang === 'pl' ? 'Brak bajek — wróć jutro! 🌙' : 'No stories yet — come back tomorrow! 🌙'}</div>`;
+      return;
+    }
+    const [today, ...archive] = allStories;
+    const t = s => lang === 'pl' ? s.title_pl : s.title_en;
+    const txt = s => lang === 'pl' ? s.story_pl : s.story_en;
+
+    app.innerHTML = `
+      <p class="today-label">✨ ${lang === 'pl' ? 'Dzisiejsza bajka' : "Today's story"} ✨</p>
+      <div class="story-featured">
+        ${today.image_url
+          ? `<img class="story-image" src="${today.image_url}" alt="${t(today)}" loading="lazy"/>`
+          : `<div class="story-image-placeholder">${emoji(today.slug||today.date)}</div>`}
+        <div class="story-body">
+          <div class="story-date">${fmtDate(today.date)}</div>
+          <h2 class="story-title">${t(today)}</h2>
+          <p class="story-text">${txt(today)}</p>
+        </div>
+      </div>
+      ${archive.length ? `
+        <div class="archive-title">📚 ${lang === 'pl' ? 'Poprzednie bajki' : 'Previous stories'}</div>
+        <div class="archive-grid">
+          ${archive.map((s,i) => `
+            <button class="archive-card" onclick="openModal(${i+1})">
+              <span class="card-emoji">${emoji(s.slug||s.date)}</span>
+              <div class="card-date">${fmtDate(s.date)}</div>
+              <div class="card-title">${t(s)}</div>
+            </button>`).join('')}
+        </div>` : ''}`;
+  }
+
+  function openModal(idx) {
+    const s = allStories[idx];
+    if (!s) return;
+    document.getElementById('modal-body').innerHTML = `
+      ${s.image_url ? `<img src="${s.image_url}" style="width:100%;border-radius:16px;margin-bottom:1rem"/>` : `<div style="font-size:4rem;text-align:center;margin-bottom:1rem">${emoji(s.slug||s.date)}</div>`}
+      <div style="font-size:.8rem;color:var(--light);font-weight:700;margin-bottom:.5rem">${fmtDate(s.date)}</div>
+      <h2 style="font-size:1.5rem;font-weight:900;margin-bottom:1rem">${lang === 'pl' ? s.title_pl : s.title_en}</h2>
+      <p style="line-height:1.8;white-space:pre-line">${lang === 'pl' ? s.story_pl : s.story_en}</p>`;
+    document.getElementById('modal').classList.add('open');
+  }
+
+  function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+  // Załaduj stories.json
+  fetch(STORIES_URL + '?t=' + Date.now())
+    .then(r => r.json())
+    .then(data => { allStories = data; render(); })
+    .catch(() => {
+      document.getElementById('app').innerHTML =
+        `<div class="loading">${lang === 'pl' ? 'Brak bajek — wróć jutro! 🌙' : 'No stories yet — come back tomorrow! 🌙'}</div>`;
+    });
+</script>
+</body>
+</html>
