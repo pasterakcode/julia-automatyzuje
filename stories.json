@@ -10,5 +10,17 @@
     "slug": "2026-03-06-sprztanie-pokoju-zabawek",
     "date": "2026-03-06",
     "image_url": null
+  },
+  {
+    "topic_pl": "karmienie rybek w akwarium",
+    "topic_en": "feeding fish in aquarium",
+    "title_pl": "Julia automatyzuje karmienie rybek w akwarium",
+    "title_en": "Julia Automates Feeding Fish in the Aquarium",
+    "story_pl": "Julia ma piękne akwarium z kolorowymi rybkami.\n— Mamo, zawsze zapominam nakarmić rybki! — mówi Julia.\nJulia myśli i myśli, jak rozwiązać ten problem.\n— Zbuduję maszynę do karmienia! — woła Julia.\nJulia bierze pudełko, sznurek i małą łyżeczkę.\nJulia skleja wszystko razem bardzo starannie.\n— Tato, zobacz moją maszynę! — pokazuje Julia.\nMaszyna Julii sypie jedzenie o tej samej porze.\nAle dziś maszyna sypie za dużo jedzenia!\n— Ups! — śmieje się Julia. — Rybki są bardzo głodne!\nJulia naprawia swoją maszynę i teraz działa idealnie.\nJulia jest z siebie bardzo dumna.",
+    "story_en": "Julia has a beautiful aquarium with colorful fish.\n— Mommy, I always forget to feed the fish! — says Julia.\nJulia thinks and thinks how to solve this problem.\n— I'll build a feeding machine! — calls Julia.\nJulia takes a box, string and a small spoon.\nJulia glues everything together very carefully.\n— Daddy, look at my machine! — shows Julia.\nJulia's machine drops food at the same time daily.\nBut today the machine drops too much food!\n— Oops! — laughs Julia. — The fish are very hungry!\nJulia fixes her machine and now it works perfectly.\nJulia is very proud of herself.",
+    "image_prompt": "cute little girl with pigtails standing next to fish tank, holding small feeding device, simple cartoon style, black and white ink outline only, no background",
+    "slug": "2026-03-06-karmienie-rybek-w-akwarium",
+    "date": "2026-03-06",
+    "image_url": null
   }
 ]
