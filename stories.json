@@ -1,5 +1,17 @@
 [
   {
+    "topic_pl": "hodowlę motyli w ogrodzie",
+    "topic_en": "butterfly farming in the garden",
+    "title_pl": "Julia automatyzuje hodowlę motyli w ogrodzie",
+    "title_en": "Julia Automates Butterfly Farming in the Garden",
+    "story_pl": "Julia bardzo lubi motyle w ogrodzie.\n— Mamo, chcę więcej motyli! — woła Julia.\nJulia ma świetny pomysł na automatyzację.\nJulia buduje specjalną maszynę do karmienia.\n— Tato, patrz! Moja maszyna działa! — krzyczy Julia.\nJulia programuje robota do sadzenia kwiatów.\nRobot Julia sypie nasiona w równych rzędach.\n— Ups! Robot zasadził kwiaty w moim buciku! — śmieje się Julia.\nJulia poprawia program i robot działa idealnie.\nMotyle przylatują do pięknego ogrodu Julia.\n— Wow! Tysiąc motyli! — cieszy się Julia.\nJulia jest z siebie bardzo dumna.",
+    "story_en": "Julia loves butterflies in the garden.\n— Mommy, I want more butterflies! — calls Julia.\nJulia has a great idea for automation.\nJulia builds a special feeding machine.\n— Daddy, look! My machine works! — shouts Julia.\nJulia programs a robot to plant flowers.\nJulia's robot sprinkles seeds in neat rows.\n— Oops! The robot planted flowers in my shoe! — laughs Julia.\nJulia fixes the program and robot works perfectly.\nButterflies fly to Julia's beautiful garden.\n— Wow! A thousand butterflies! — cheers Julia.\nJulia is very proud of herself.",
+    "image_prompt": "a cute little girl with pigtails building a small robot in a garden with butterflies, B&W ink outline only, simple cartoon style, no background",
+    "slug": "2026-03-07-hodowl-motyli-w-ogrodzie",
+    "date": "2026-03-07",
+    "image_url": null
+  },
+  {
     "topic_pl": "sprzątanie pokoju zabawek",
     "topic_en": "cleaning up the toy room",
     "title_pl": "Julia automatyzuje sprzątanie pokoju zabawek",
