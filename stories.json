@@ -1,5 +1,17 @@
 [
   {
+    "topic_pl": "pielęgnację kaktusów",
+    "topic_en": "cactus care",
+    "title_pl": "Julia automatyzuje pielęgnację kaktusów",
+    "title_en": "Julia Automates Cactus Care",
+    "story_pl": "Julia ma małe kaktusy na parapecie.\nJulia codziennie o nich zapomina.\n– Mamo, moje kaktusy są smutne!\nJulia myśli i myśli.\nJulia biegnie do taty po pomoc.\n– Tato, zrobimy robot do podlewania?\nJulia i tata budują małą maszynkę.\nJulia ustawia budzik w telefonie mamy.\nTeraz budzik przypomina o podlewaniu!\nJulia podlewa kaktusy punktualnie.\nKaktusy Julii rosną i są zielone.\n– Jestem mądrą ogrodniczką!\nJulia jest z siebie bardzo dumna.",
+    "story_en": "Julia has small cacti on the windowsill.\nJulia forgets about them every day.\n– Mommy, my cacti are sad!\nJulia thinks and thinks.\nJulia runs to daddy for help.\n– Daddy, shall we make a watering robot?\nJulia and daddy build a little machine.\nJulia sets an alarm on mommy's phone.\nNow the alarm reminds about watering!\nJulia waters the cacti on time.\nJulia's cacti grow and are green.\n– I'm a smart gardener!\nJulia is very proud of herself.",
+    "image_prompt": "a cute little girl with cacti and a simple watering device, B&W ink outline only, simple cartoon style, no background",
+    "slug": "2026-03-09-pielgnacj-kaktusw",
+    "date": "2026-03-09",
+    "image_url": "https://storage.googleapis.com/julia-automatyzuje-images/2026-03-09-pielgnacj-kaktusw.png"
+  },
+  {
     "topic_pl": "nalewanie wody do konewki",
     "topic_en": "filling watering can with water",
     "title_pl": "Julia automatyzuje nalewanie wody do konewki",
