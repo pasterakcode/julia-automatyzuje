@@ -1,5 +1,17 @@
 [
   {
+    "topic_pl": "malowanie paznokci lalkom",
+    "topic_en": "painting dolls' nails",
+    "title_pl": "Julia automatyzuje malowanie paznokci lalkom",
+    "title_en": "Julia Automates Painting Dolls' Nails",
+    "story_pl": "Julia ma dużo lalek do malowania paznokci.\nJulia myśli, jak zrobić to szybciej.\n— Mamo, czy mogę użyć twojego pędzelka? — pyta Julia.\nJulia przywiązuje pędzelek do małego robota.\nJulia włącza robota i patrzy z ciekawością.\nRobot maluje paznokci pierwszej lalce bardzo szybko.\nAle robot maluje też nos i policzki lalki!\nJulia śmieje się i wyłącza robota.\n— Tato, robot pomylił się! — woła Julia.\nJulia postanawia dokończyć malowanie sama.\nJulia maluje paznokci pozostałym lalkom bardzo starannie.\n— Teraz moje lalki wyglądają pięknie! — mówi Julia.\nJulia jest z siebie dumna.",
+    "story_en": "Julia has many dolls that need their nails painted.\nJulia thinks about how to do it faster.\n— Mommy, can I use your brush? — asks Julia.\nJulia ties the brush to a small robot.\nJulia turns on the robot and watches curiously.\nThe robot paints the first doll's nails very quickly.\nBut the robot also paints the doll's nose and cheeks!\nJulia laughs and turns off the robot.\n— Daddy, the robot made a mistake! — calls Julia.\nJulia decides to finish painting by herself.\nJulia paints the remaining dolls' nails very carefully.\n— Now my dolls look beautiful! — says Julia.\nJulia is proud of herself.",
+    "image_prompt": "a cute little girl with a small robot painting doll nails, B&W ink outline only, simple cartoon style, no background",
+    "slug": "2026-03-10-malowanie-paznokci-lalkom",
+    "date": "2026-03-10",
+    "image_url": null
+  },
+  {
     "topic_pl": "pielęgnację kaktusów",
     "topic_en": "cactus care",
     "title_pl": "Julia automatyzuje pielęgnację kaktusów",
