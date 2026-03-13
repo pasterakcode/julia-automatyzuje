@@ -1,5 +1,17 @@
 [
   {
+    "topic_pl": "komponowanie wierszów dla chomika",
+    "topic_en": "composing poems for a hamster",
+    "title_pl": "Julia automatyzuje komponowanie wierszów dla chomika",
+    "title_en": "Julia Automates Composing Poems for Her Hamster",
+    "story_pl": "Julia ma małego chomika Puszka.\nPuszek bardzo lubi słuchać wierszy przed snem.\nJulia pisze dla niego codziennie nowy wiersz.\n— Tato, to trwa bardzo długo! — mówi Julia.\nJulia ma świetny pomysł.\nJulia buduje specjalną maszynę do wierszy.\nMaszyna ma kolorowe przyciski i dzwoneczki.\n— Mamo, zobacz! — woła Julia dumnie.\nJulia wciska czerwony przycisk.\nMaszyna brzęczy i wypisuje: \"Puszek ma puszysty brzuszek!\".\nPuszek tupie łapkami i piszcze radośnie.\nJulia jest z siebie bardzo dumna.",
+    "story_en": "Julia has a little hamster named Fluffy.\nFluffy loves listening to poems before bedtime.\nJulia writes him a new poem every day.\n— Daddy, this takes so long! — says Julia.\nJulia has a great idea.\nJulia builds a special poem-making machine.\nThe machine has colorful buttons and little bells.\n— Mommy, look! — calls Julia proudly.\nJulia presses the red button.\nThe machine buzzes and prints: \"Fluffy has a fluffy tummy!\".\nFluffy taps his paws and squeaks happily.\nJulia is very proud of herself.",
+    "image_prompt": "cute little girl with pigtails standing next to a colorful button machine, small hamster nearby, B&W ink outline only, simple cartoon style, no background",
+    "slug": "2026-03-13-komponowanie-wierszw-dla-chomika",
+    "date": "2026-03-13",
+    "image_url": null
+  },
+  {
     "topic_pl": "komponowanie kołysanek dla pluszaków",
     "topic_en": "composing lullabies for stuffed animals",
     "title_pl": "Julia automatyzuje komponowanie kołysanek dla pluszaków",
