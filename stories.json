@@ -1,5 +1,17 @@
 [
   {
+    "topic_pl": "rozdawanie listów w dzielnicy zabawek",
+    "topic_en": "delivering letters in the toy district",
+    "title_pl": "Julia automatyzuje rozdawanie listów w dzielnicy zabawek",
+    "title_en": "Julia Automates Letter Delivery in the Toy District",
+    "story_pl": "Julia mieszka w dzielnicy zabawek.\nMisie i lalki dostają dużo listów.\n— Mamo, listonosz jest bardzo zmęczony! — mówi Julia.\nJulia ma pomysł na pomoc.\nJulia buduje małego robota.\nRobot ma kółka i skrzynkę na listy.\n— Tato, zobacz! Mój robot nosi listy! — woła Julia.\nRobot jedzie do misia i daje mu list.\nPotem robot jedzie do lalki.\nAle robot pomylił domy!\n— Ups! Miś dostał list do lalki! — śmieje się Julia.\nJulia poprawia robota i wszystko jest dobrze.\nJulia jest z siebie dumna.",
+    "story_en": "Julia lives in the toy district.\nTeddy bears and dolls get many letters.\n— Mommy, the mailman is very tired! — says Julia.\nJulia has an idea to help.\nJulia builds a little robot.\nThe robot has wheels and a mailbox.\n— Daddy, look! My robot delivers letters! — calls Julia.\nThe robot goes to the bear and gives him a letter.\nThen the robot goes to the doll.\nBut the robot mixed up the houses!\n— Oops! The bear got the doll's letter! — Julia laughs.\nJulia fixes the robot and everything is fine.\nJulia is proud of herself.",
+    "image_prompt": "cute little girl with pigtails standing next to small wheeled robot carrying letters, simple cartoon style, B&W ink outline only, no background",
+    "slug": "2026-03-14-rozdawanie-listw-w-dzielnicy-zabawek",
+    "date": "2026-03-14",
+    "image_url": null
+  },
+  {
     "topic_pl": "komponowanie wierszów dla chomika",
     "topic_en": "composing poems for a hamster",
     "title_pl": "Julia automatyzuje komponowanie wierszów dla chomika",
