@@ -1,5 +1,17 @@
 [
   {
+    "topic_pl": "rozplątywanie węzłów w sznurowadłach",
+    "topic_en": "untangling knots in shoelaces",
+    "title_pl": "Julia automatyzuje rozplątywanie węzłów w sznurowadłach",
+    "title_en": "Julia Automates Untangling Knots in Shoelaces",
+    "story_pl": "Julia ma problem ze swoimi butami.\nSznurowadła są mocno poplątane w węzły.\n– Mamo, nie mogę rozplątać swoich butów!\nJulia myśli bardzo intensywnie.\nJulia ma genialny pomysł.\n– Zbuduję maszynkę do rozplątywania węzłów!\nJulia bierze druciki i małe nożyczki.\nJulia konstruuje specjalną maszynkę.\nMaszyna ma obracające się kółeczka.\n– Tata, zobacz moją maszynę!\nJulia wkłada sznurowadło do maszyny.\nKółeczka obracają się i węzeł znika!\n– Hurra! Moja maszyna działa!\nJulia jest z siebie bardzo dumna.",
+    "story_en": "Julia has a problem with her shoes.\nThe shoelaces are tangled in tight knots.\n– Mommy, I can't untangle my shoes!\nJulia thinks very hard.\nJulia has a brilliant idea.\n– I'll build a machine for untangling knots!\nJulia takes wires and small scissors.\nJulia constructs a special machine.\nThe machine has spinning wheels.\n– Daddy, look at my machine!\nJulia puts the shoelace into the machine.\nThe wheels spin and the knot disappears!\n– Hooray! My machine works!\nJulia is very proud of herself.",
+    "image_prompt": "a cute little girl with pigtails building a small mechanical device with spinning wheels to untangle shoelaces, B&W ink outline only, simple cartoon style, no background",
+    "slug": "2026-03-21-rozpltywanie-wzw-w-sznurowadach",
+    "date": "2026-03-21",
+    "image_url": null
+  },
+  {
     "topic_pl": "układanie książek w biblioteczce",
     "topic_en": "organizing books in a bookshelf",
     "title_pl": "Julia automatyzuje układanie książek w biblioteczce",
